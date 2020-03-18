@@ -1,1 +1,0 @@
-# OpenGL-GLUT-University-Assignment

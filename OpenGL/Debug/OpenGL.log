@@ -1,0 +1,12 @@
+﻿  OpenGL.cpp
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(43,25): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(48,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(49,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(50,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(52,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(53,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(54,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(56,30): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(57,30): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\FOGGS\OpenGL\OpenGL\OpenGL.cpp(58,30): warning C4305: '=': truncation from 'double' to 'float'
+  OpenGL.vcxproj -> G:\Semester 2\FOGGS\OpenGL\Debug\OpenGL.exe
