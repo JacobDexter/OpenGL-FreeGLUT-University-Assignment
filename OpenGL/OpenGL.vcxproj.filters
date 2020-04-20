@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Object File Loaders">
+      <UniqueIdentifier>{75127e19-589a-4082-a92b-3052eb68c88e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture Loaders">
+      <UniqueIdentifier>{d3063de3-e8fc-46a1-be74-aee9bbd8f0c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object File Loaders">
+      <UniqueIdentifier>{30f01fd8-a53f-4a83-802b-ab34b59c8ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene Object Files">
+      <UniqueIdentifier>{87ba2159-7eb3-4ac4-b947-98cb3b4aaa3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene Object Files">
+      <UniqueIdentifier>{3d667cd2-fd2d-4b1d-b8f0-6c241c1556be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Texture Loaders">
+      <UniqueIdentifier>{97030436-64c0-4e3e-b274-8b24ac5af698}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL.h">
@@ -24,20 +42,26 @@
     <ClInclude Include="Structures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Texture2D.h">
+      <Filter>Header Files\Texture Loaders</Filter>
     </ClInclude>
     <ClInclude Include="MeshLoader.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Object File Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJLoader.h">
+      <Filter>Header Files\Object File Loaders</Filter>
     </ClInclude>
     <ClInclude Include="SceneObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Scene Object Files</Filter>
     </ClInclude>
     <ClInclude Include="Pyramid.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Scene Object Files</Filter>
     </ClInclude>
-    <ClInclude Include="Texture2D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="OBJObject.h">
+      <Filter>Header Files\Scene Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Scene Object Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -50,20 +74,26 @@
     <ClCompile Include="GLUTCallbacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cube.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="OBJLoader.cpp">
+      <Filter>Source Files\Object File Loaders</Filter>
     </ClCompile>
     <ClCompile Include="MeshLoader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Object File Loaders</Filter>
     </ClCompile>
     <ClCompile Include="SceneObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Scene Object Files</Filter>
     </ClCompile>
     <ClCompile Include="Pyramid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Scene Object Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJObject.cpp">
+      <Filter>Source Files\Scene Object Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\Scene Object Files</Filter>
     </ClCompile>
     <ClCompile Include="Texture2D.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Texture Loaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

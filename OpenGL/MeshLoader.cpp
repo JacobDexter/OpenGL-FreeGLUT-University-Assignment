@@ -93,6 +93,8 @@ namespace MeshLoader
 		LoadNormals(inFile, *mesh);
 		LoadIndices(inFile, *mesh);
 
+		inFile.close();
+
 		return mesh;
 	}
 }

@@ -1,25 +1,25 @@
 #include "Cube.h"
-#include <fstream>
-#include <iostream>
-#include <string>
 
 using namespace std;
 
-Cube::Cube(Mesh* mesh, Texture2D* texture, float x, float y, float z) : SceneObject(mesh, texture)
+Cube::Cube(Mesh* mesh, Texture2D* texture, GLfloat rotation, float x, float y, float z) : SceneObject(mesh, texture)
 {
 	_position.x = x;
 	_position.y = y;
 	_position.z = z;
+
+	_rotation = rotation;
+	_rotationSpeed = 5.0f;
 }
 
 void Cube::InitMat()
 {
 	_material = new Material();
-	_material->Ambient.x = 0.8; _material->Ambient.y = 0.05; _material->Ambient.z = 0.05;
+	_material->Ambient.x = 1.0; _material->Ambient.y = 1.00; _material->Ambient.z = 1.00;
 	_material->Ambient.w = 1.0;
-	_material->Diffuse.x = 0.8; _material->Diffuse.y = 0.05; _material->Diffuse.z = 0.05;
+	_material->Diffuse.x = 0.64; _material->Diffuse.y = 0.64; _material->Diffuse.z = 0.64;
 	_material->Diffuse.w = 1.0;
-	_material->Specular.x = 1.0; _material->Specular.y = 1.0; _material->Specular.z = 1.0;
+	_material->Specular.x = 0.5; _material->Specular.y = 0.5; _material->Specular.z = 0.5;
 	_material->Specular.w = 1.0;
 	_material->Shininess = 100.0f;
 }
@@ -55,7 +55,7 @@ void Cube::Draw()
 
 void Cube::Update()
 {
-	//_rotation += 5.0f;
+	_rotation += _rotationSpeed;
 }
 
 Cube::~Cube()

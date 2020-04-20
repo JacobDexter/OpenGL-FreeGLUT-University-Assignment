@@ -3,6 +3,9 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "GL/freeglut.h"
+#include <fstream>
+#include <iostream>
+#include <string>
 #include "Structures.h"
 #include "SceneObject.h"
 
@@ -16,7 +19,7 @@ private:
 	//material
 	Material* _material;
 public:
-	Cube(Mesh* mesh, Texture2D* texture, float x, float y,float z);
+	Cube(Mesh* mesh, Texture2D* texture, GLfloat rotation, float x, float y,float z);
 	~Cube();
 
 	void Draw();

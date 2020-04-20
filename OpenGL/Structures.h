@@ -1,6 +1,8 @@
 #pragma once
 
 #include "GL/freeglut.h"
+#include <vector>
+#include "glm/glm.hpp"
 
 struct Vector3
 {
@@ -24,6 +26,7 @@ struct Color
 	GLfloat r, g, b;
 };
 
+//Mesh
 struct Vertex
 {
 	GLfloat x, y, z;
@@ -43,6 +46,15 @@ struct Mesh
 	int VertexCount, NormalCount, IndexCount, TexCoordCount;
 };
 
+//Object
+struct Object
+{
+	std::vector<glm::vec3> vertices;
+	std::vector<glm::vec2> uvs;
+	std::vector<glm::vec3> normals;
+};
+
+//Visual
 struct Lighting
 {
 	Vector4 Ambient, Diffuse, Specular;

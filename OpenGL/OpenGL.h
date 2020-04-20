@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include "GL/glew.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "GL/freeglut.h"
@@ -7,12 +8,20 @@
 #include "Structures.h"
 #include "Cube.h"
 #include "Pyramid.h"
+#include "OBJObject.h"
+#include "glm/glm.hpp"
+#include <vector>
+#include "OBJLoader.h"
+#include "MeshLoader.h"
+#include <iostream>
 
 #define REFRESHRATE 16
 #define SCREENWIDTH 800
 #define SCREENHEIGHT 800
 
-#define OBJECTCOUNT 100
+#define OBJECTCOUNT 200
+
+using namespace std;
 
 class OpenGL
 {
@@ -31,8 +40,10 @@ private:
 	float rotation;
 	Camera* camera;
 	SceneObject* objects[OBJECTCOUNT];
+	SceneObject* OBJmodel;
 
 	Texture2D* texture;
+	Texture2D* texture2;
 
 	//lighting
 	Vector4* _lightPosition;
