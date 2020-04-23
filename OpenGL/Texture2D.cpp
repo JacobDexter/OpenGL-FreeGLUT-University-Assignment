@@ -12,7 +12,7 @@ Texture2D::Texture2D()
 
 }
 
-bool Texture2D::Load(char* path, int width, int height)
+bool Texture2D::LoadRAW(char* path, int width, int height)
 {
 	char* tempTextureData;
 	int fileSize;
@@ -50,6 +50,7 @@ bool Texture2D::Load(char* path, int width, int height)
 
 	return true;
 }
+
 
 Texture2D::~Texture2D()
 {

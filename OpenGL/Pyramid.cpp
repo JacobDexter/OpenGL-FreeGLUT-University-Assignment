@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Pyramid::Pyramid(Mesh* mesh, Texture2D* texture, float x, float y, float z) : SceneObject(mesh, texture)
+Pyramid::Pyramid(Mesh* mesh, float x, float y, float z) : SceneObject(mesh, nullptr)
 {
 	_position.x = x;
 	_position.y = y;
@@ -26,20 +26,17 @@ void Pyramid::InitMat()
 
 void Pyramid::Draw()
 {
-	if (_mesh->Vertices != nullptr && _mesh->Normals != nullptr && _mesh->Indices != nullptr && _mesh->TexCoords != nullptr)
+	if (_mesh->Vertices != nullptr && _mesh->Normals != nullptr && _mesh->Indices != nullptr)
 	{
-		glBindTexture(GL_TEXTURE_2D, _texture->GetID());
-		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glEnableClientState(GL_NORMAL_ARRAY);
 		glVertexPointer(3, GL_FLOAT, 0, _mesh->Vertices);
 		glNormalPointer(GL_FLOAT, 0, _mesh->Normals);
-		glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoords);
 		InitMat();
-		glMaterialfv(GL_FRONT, GL_AMBIENT, &(_material->Ambient.x));
-		glMaterialfv(GL_FRONT, GL_DIFFUSE, &(_material->Diffuse.x));
-		glMaterialfv(GL_FRONT, GL_SPECULAR, &(_material->Specular.x));
-		glMaterialfv(GL_FRONT, GL_SHININESS, &(_material->Shininess));
+		glMaterialfv(GL_FRONT, GL_AMBIENT, &(_material->Ambient.x)); //draw ambient material
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, &(_material->Diffuse.x)); //draw diffuse material
+		glMaterialfv(GL_FRONT, GL_SPECULAR, &(_material->Specular.x)); //draw specular material
+		glMaterialfv(GL_FRONT, GL_SHININESS, &(_material->Shininess)); //draw shininess material
 		glPushMatrix();
 
 		glTranslatef(_position.x, _position.y, _position.z);
@@ -49,7 +46,6 @@ void Pyramid::Draw()
 		glPopMatrix();
 		glDisableClientState(GL_NORMAL_ARRAY);
 		glDisableClientState(GL_VERTEX_ARRAY);
-		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	}
 }
 

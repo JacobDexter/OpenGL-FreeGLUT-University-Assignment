@@ -29,12 +29,12 @@ void Cube::Draw()
 	if (_mesh->Vertices != nullptr && _mesh->Normals != nullptr && _mesh->Indices != nullptr && _mesh->TexCoords != nullptr)
 	{
 		glBindTexture(GL_TEXTURE_2D, _texture->GetID());
-		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-		glEnableClientState(GL_VERTEX_ARRAY);
-		glEnableClientState(GL_NORMAL_ARRAY);
-		glVertexPointer(3, GL_FLOAT, 0, _mesh->Vertices);
-		glNormalPointer(GL_FLOAT, 0, _mesh->Normals);
-		glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoords);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY); //start array of TexCoords
+		glEnableClientState(GL_VERTEX_ARRAY); //start array of vertices
+		glEnableClientState(GL_NORMAL_ARRAY); //start array of normals
+		glVertexPointer(3, GL_FLOAT, 0, _mesh->Vertices); //get Vertices from array
+		glNormalPointer(GL_FLOAT, 0, _mesh->Normals); //get normals from array
+		glTexCoordPointer(2, GL_FLOAT, 0, _mesh->TexCoords); //get texCoords from array
 		InitMat();
 		glMaterialfv(GL_FRONT, GL_AMBIENT, &(_material->Ambient.x));
 		glMaterialfv(GL_FRONT, GL_DIFFUSE, &(_material->Diffuse.x));

@@ -24,7 +24,7 @@ void OpenGL::InitGL(int argc, char* argv[])
 	glLoadIdentity();
 	glViewport(0, 0, SCREENWIDTH, SCREENHEIGHT);
 	gluPerspective(45, 1, 1, 1000);
-	glClearColor(0.1f, 0.1f, 0.0f, 0.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_TEXTURE_2D);
@@ -67,27 +67,18 @@ void OpenGL::InitObjects()
 
 	//Load Shapes
 	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt");
-	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+	Mesh* pyramidMesh = MeshLoader::LoadNoTexCoords((char*)"pyramid.txt");
 
 	//Load Texture
 	texture = new Texture2D();
-	texture->Load((char*)"stars.raw", 512, 512);
-
-	texture2 = new Texture2D();
-	texture2->Load((char*)"stars.raw", 512, 512);
+	texture->LoadRAW((char*)"stars.raw", 512, 512);
 
 	OBJmodel = new OBJObject(model, "Materials/Asteroid.mtl", 0.0, 0.0, -60.0);
 
 	//cube initialisation
-	for (int i = 0; i < OBJECTCOUNT / 2; i++)
+	for (int i = 0; i < OBJECTCOUNT; i++)
 	{
-		objects[i] = new Cube(cubeMesh, texture, 45.0f,((rand() % 400) / 10.0f) - 20.0f, ((rand() % 400) / 10.0f) - 20.0f, -(rand() % 1000) / 10.0f);
-	}
-
-	//pyramid initialisation
-	for (int i = (OBJECTCOUNT / 2); i < OBJECTCOUNT; i++)
-	{
-		objects[i] = new Pyramid(pyramidMesh, texture2, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 400) / 10.0f) - 20.0f, -(rand() % 1000) / 10.0f);
+		objects[i] = new Cube(cubeMesh, texture, 45.0f,((rand() % 1000) / 10.0f) - 50.0f, ((rand() % 1000) / 10.0f) - 40.0f, -(rand() % 1000) / 10.0f);
 	}
 
 	camera->eye.x = 0.0f;
@@ -127,7 +118,7 @@ void OpenGL::Update()
 void OpenGL::Display()
 {
 	Vector3 titlePosition = { -0.95f, 0.9f, 0.0f };
-	Color titleColor = { 1.0f, 1.0f, 1.0f };
+	Color titleColor = { 0.5f, 0.0f, 1.0f };
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -136,9 +127,9 @@ void OpenGL::Display()
 		objects[i]->Draw();
 	}
 
-	OBJmodel->Draw();
+	DrawString(GetTimeString().c_str(), &titlePosition, &titleColor);
 
-	DrawString("OpenGL Asteroid Project", &titlePosition, &titleColor);
+	OBJmodel->Draw();
 
 	glFlush();
 	glutSwapBuffers();
@@ -191,21 +182,61 @@ void OpenGL::DrawString(const char* text, Vector3* position, Color* color)
 	glPushMatrix();
 	glLoadIdentity();
 
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_LIGHTING);
+	glDisable(GL_LIGHT0);
 	glDisable(GL_DEPTH_TEST); //ignore depth test so text renders on top
 	glDisable(GL_LIGHTING); //dont apply lighting to text
 
 	glColor3f(color->r, color->g, color->b); //set color
-	glTranslatef(position->x, position->y, position->z);
+	glTranslatef(position->x, position->y, position->z); //set position
 	glRasterPos2f(0.0f, 0.0f);
-	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)text);
+	glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)text); //print string
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_TEXTURE_2D);
 
 	glMatrixMode(GL_PROJECTION);
 	glPopMatrix(); //use old matrix
 	glMatrixMode(GL_MODELVIEW); //go back to model view to render objects
 	glPopMatrix();
+}
+
+string OpenGL::GetTimeString()
+{
+	//Time since glutinit
+	int time = glutGet(GLUT_ELAPSED_TIME) / 1000; //get time in seconds
+	int seconds = time % 60; //get seconds
+	int minutes = time / 60; //get minutes
+
+	//turn ints into stringstream
+	stringstream secondsString;
+	secondsString << seconds;
+	stringstream minutesString;
+	minutesString << minutes;
+
+	string timeDisplay;
+
+	if (seconds < 10)//checks if extra 0 is needed
+	{
+		//stringstream to string
+		timeDisplay = minutesString.str() + ":0" + secondsString.str(); //Add a zero in front of seconds
+	}
+	else
+	{
+		//stringstream to string
+		timeDisplay = minutesString.str() + ":" + secondsString.str();
+	}
+
+	if (time == NULL)
+	{
+		return "Start!";
+	}
+
+	return timeDisplay;
 }
 
 OpenGL::~OpenGL(void)
@@ -214,7 +245,6 @@ OpenGL::~OpenGL(void)
 	delete _lightPosition;
 	delete _lightData;
 	delete texture;
-	delete texture2;
 	
 	for (int i = 0; i < OBJECTCOUNT; i++)
 	{

@@ -9,4 +9,5 @@
 namespace MeshLoader
 {
 	Mesh* Load(char* path);
+	Mesh* LoadNoTexCoords(char* path);
 };

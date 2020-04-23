@@ -15,7 +15,7 @@ private:
 	//material
 	Material* _material;
 public:
-	Pyramid(Mesh* mesh, Texture2D* texture, float x, float y, float z);
+	Pyramid(Mesh* mesh, float x, float y, float z);
 	~Pyramid();
 
 	void Draw();

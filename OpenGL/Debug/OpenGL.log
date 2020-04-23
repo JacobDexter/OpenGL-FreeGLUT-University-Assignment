@@ -1,31 +1,12 @@
-﻿  Cube.cpp
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Cube.cpp(20,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Cube.cpp(20,58): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Cube.cpp(20,87): warning C4305: '=': truncation from 'double' to 'float'
-  GLUTCallbacks.cpp
-  main.cpp
-  MeshLoader.cpp
-  OBJObject.cpp
-  OBJLoader.cpp
-  OpenGL.cpp
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(41,25): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(46,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(47,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(48,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(50,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(51,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(52,29): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(54,30): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(55,30): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\OpenGL.cpp(56,30): warning C4305: '=': truncation from 'double' to 'float'
-  Pyramid.cpp
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(18,28): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(18,57): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(18,86): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(20,28): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(20,57): warning C4305: '=': truncation from 'double' to 'float'
-F:\GitHub\OpenGL-GLUT-University-Assignment\OpenGL\Pyramid.cpp(20,86): warning C4305: '=': truncation from 'double' to 'float'
-  SceneObject.cpp
-  Texture2D.cpp
-  Generating Code...
-  OpenGL.vcxproj -> F:\GitHub\OpenGL-GLUT-University-Assignment\Debug\OpenGL.exe
+﻿  OpenGL.cpp
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(41,25): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(46,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(47,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(48,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(50,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(51,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(52,29): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(54,30): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(55,30): warning C4305: '=': truncation from 'double' to 'float'
+G:\Semester 2\Hand In\FOGGS-Final\OpenGL\OpenGL\OpenGL.cpp(56,30): warning C4305: '=': truncation from 'double' to 'float'
+  OpenGL.vcxproj -> G:\Semester 2\Hand In\FOGGS-Final\OpenGL\Debug\OpenGL.exe

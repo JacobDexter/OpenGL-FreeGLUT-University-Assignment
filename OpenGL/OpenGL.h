@@ -14,6 +14,8 @@
 #include "OBJLoader.h"
 #include "MeshLoader.h"
 #include <iostream>
+#include <sstream>
+#include <string.h>
 
 #define REFRESHRATE 16
 #define SCREENWIDTH 800
@@ -35,6 +37,7 @@ public:
 	void Update();
 	void Input(unsigned char key, int x, int y);
 	void DrawString(const char* text, Vector3* position, Color* color);
+	string GetTimeString();
 
 private:
 	float rotation;
@@ -43,7 +46,6 @@ private:
 	SceneObject* OBJmodel;
 
 	Texture2D* texture;
-	Texture2D* texture2;
 
 	//lighting
 	Vector4* _lightPosition;

@@ -19,9 +19,7 @@ namespace MeshLoader
 
 			for (int i = 0; i < mesh.VertexCount; i++)
 			{
-				inFile >> mesh.Vertices[i].x;
-				inFile >> mesh.Vertices[i].y;
-				inFile >> mesh.Vertices[i].z;
+				inFile >> mesh.Vertices[i].x >> mesh.Vertices[i].y >> mesh.Vertices[i].z;
 			}
 		}
 	}
@@ -36,8 +34,7 @@ namespace MeshLoader
 
 			for (int i = 0; i < mesh.TexCoordCount; i++)
 			{
-				inFile >> mesh.TexCoords[i].u;
-				inFile >> mesh.TexCoords[i].v;
+				inFile >> mesh.TexCoords[i].u >> mesh.TexCoords[i].v;
 			}
 		}
 	}
@@ -52,9 +49,7 @@ namespace MeshLoader
 
 			for (int i = 0; i < mesh.NormalCount; i++)
 			{
-				inFile >> mesh.Normals[i].x;
-				inFile >> mesh.Normals[i].y;
-				inFile >> mesh.Normals[i].z;
+				inFile >> mesh.Normals[i].x >> mesh.Normals[i].y >> mesh.Normals[i].z;
 			}
 		}
 	}
@@ -90,6 +85,29 @@ namespace MeshLoader
 
 		LoadVertices(inFile, *mesh);
 		LoadTexCoords(inFile, *mesh);
+		LoadNormals(inFile, *mesh);
+		LoadIndices(inFile, *mesh);
+
+		inFile.close();
+
+		return mesh;
+	}
+
+	Mesh* MeshLoader::LoadNoTexCoords(char* path)
+	{
+		Mesh* mesh = new Mesh();
+
+		ifstream inFile;
+
+		inFile.open(path);
+
+		if (!inFile.good())
+		{
+			cerr << "Can't open texture file " << path << endl;
+			return nullptr;
+		}
+
+		LoadVertices(inFile, *mesh);
 		LoadNormals(inFile, *mesh);
 		LoadIndices(inFile, *mesh);
 
