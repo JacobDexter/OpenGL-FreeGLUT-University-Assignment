@@ -7,3 +7,4 @@ The game is a showcase of some of the rendering capabilities of OpenGL and FreeG
 * Q – Slow down star rotation
 * E – Speed up star rotation
 ## Images
+![Image 1](https://i.ibb.co/7zhcTcx/FOGGS.png)
