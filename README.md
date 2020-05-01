@@ -6,3 +6,4 @@ The game is a showcase of some of the rendering capabilities of OpenGL and FreeG
 * D, A – +/- X axis camera movement
 * Q – Slow down star rotation
 * E – Speed up star rotation
+## Images
